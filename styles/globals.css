@@ -50,3 +50,16 @@
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
 }
+
+.navItem {
+  transition: all 0.2s ease-in-out;
+}
+.navItem:hover {
+  transform: scale(1.2);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.nav:hover .navItem:not(:hover) {
+  transform: scale(0.8);
+}

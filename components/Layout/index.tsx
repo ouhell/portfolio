@@ -35,10 +35,10 @@ const Layout = (props: Props) => {
           initial="hidden"
           animate="shown"
           exit="exit"
-          className="h-full  bg-site "
+          className="h-full  bg-site pb-10 lg:pb-0 "
           key={route}
         >
-          {props.children}
+          <AnimatePresence>{props.children}</AnimatePresence>
         </m.div>
       </AnimatePresence>
     </div>
@@ -49,11 +49,11 @@ export default Layout;
 
 const animations: Variants = {
   hidden: {
-    y: "10%",
+    // y: "10%",
     opacity: 0,
   },
   shown: {
-    y: "0%",
+    // y: "0%",
     opacity: 1,
     transition: {
       duration: 0.3,
@@ -61,7 +61,7 @@ const animations: Variants = {
     },
   },
   exit: {
-    y: "-10%",
+    // y: "-10%",
     opacity: 0,
     transition: {
       duration: 0.3,
