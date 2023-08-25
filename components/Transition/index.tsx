@@ -15,7 +15,7 @@ const Transition = (props: Props) => {
           duration: 0.6,
           ease: "easeInOut",
         }}
-        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-purple-950 z-30"
+        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-[#2a1c51] z-30"
       ></m.div>
       <m.div
         variants={parentAnimation}
@@ -27,7 +27,7 @@ const Transition = (props: Props) => {
           duration: 0.6,
           ease: "easeInOut",
         }}
-        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-purple-900 z-20"
+        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-[#2f1f56] z-20"
       ></m.div>
       <m.div
         variants={parentAnimation}
@@ -39,7 +39,7 @@ const Transition = (props: Props) => {
           duration: 0.6,
           ease: "easeInOut",
         }}
-        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-purple-800  z-10"
+        className="fixed top-0 left-0 bottom-0 right-full h-screen w-full bg-[#3c2765]  z-10"
       ></m.div>
     </>
   );

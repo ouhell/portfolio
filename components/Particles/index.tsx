@@ -1,19 +1,20 @@
 import React from "react";
-import { Particles } from "react-tsparticles";
+import { Particles as ReactParticles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
 type Props = {};
 
-const About = (props: Props) => {
+const Particles = (props: Props) => {
   const particlesInit = React.useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = React.useCallback(async () => {}, []);
   return (
-    <Particles
+    <ReactParticles
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
+      className="absolute h-full w-full"
       options={{
         fpsLimit: 120,
         interactivity: {
@@ -82,4 +83,4 @@ const About = (props: Props) => {
   );
 };
 
-export default About;
+export default Particles;
