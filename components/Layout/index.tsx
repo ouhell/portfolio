@@ -23,7 +23,7 @@ const Layout = (props: Props) => {
     <div
       className={
         (classNames(sora.className),
-        "page bg-site bg-cover bg-no-repeat text-white relative")
+        "page bg-site bg-cover bg-no-repeat bg-cover text-white relative")
       }
     >
       <TopLefImg />
@@ -35,7 +35,7 @@ const Layout = (props: Props) => {
           initial="hidden"
           animate="shown"
           exit="exit"
-          className="h-full  bg-site bg-no-repeat pb-10 lg:pb-0 "
+          className="h-full   bg-site bg-no-repeat bg-cover pb-10 lg:pb-0 "
           key={route}
         >
           <AnimatePresence>{props.children}</AnimatePresence>
