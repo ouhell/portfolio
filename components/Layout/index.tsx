@@ -35,7 +35,7 @@ const Layout = (props: Props) => {
           initial="hidden"
           animate="shown"
           exit="exit"
-          className="h-full  bg-site pb-10 lg:pb-0 "
+          className="h-full  bg-site bg-no-repeat pb-10 lg:pb-0 "
           key={route}
         >
           <AnimatePresence>{props.children}</AnimatePresence>

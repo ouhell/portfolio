@@ -44,39 +44,39 @@ const About = (props: Props) => {
           <div className="mt-4 w-fit">
             <m.ul
               className="text-left"
-              variants={fadeIn("right", 0.5)}
+              variants={fadeIn("left", 0.5)}
               initial="hidden"
               animate="show"
             >
-              <m.li className="" variants={fadeIn("right", 0.6)}>
+              <m.li className="" variants={fadeIn("left", 0.6)}>
                 <p>
                   - Javascript - Typescript{" "}
                   <DiJavascript1 className="inline-block text-white" />{" "}
                   <TbBrandTypescript className="inline-block text-white" />
                 </p>
               </m.li>
-              <m.li variants={fadeIn("right", 0.7)}>
+              <m.li variants={fadeIn("left", 0.7)}>
                 <p>
                   - Nodejs - Expressjs{" "}
                   <BiLogoNodejs className="inline-block text-white" />{" "}
                   <SiExpress className="inline-block text-white" />
                 </p>
               </m.li>
-              <m.li variants={fadeIn("right", 0.8)}>
+              <m.li variants={fadeIn("left", 0.8)}>
                 <p>
                   - Reactjs - Nextjs{" "}
                   <BiLogoReact className="inline-block text-white" />{" "}
                   <SiNextdotjs className="inline-block text-white" />
                 </p>
               </m.li>
-              <m.li variants={fadeIn("right", 0.9)}>
+              <m.li variants={fadeIn("left", 0.9)}>
                 <p>
                   - MongoDb - SQL{" "}
                   <SiMongodb className="inline-block text-white" />{" "}
                   <SiPostgresql className="inline-block text-white" />
                 </p>
               </m.li>
-              <m.li variants={fadeIn("right", 1)}>
+              <m.li variants={fadeIn("left", 1)}>
                 <p>
                   - Electronjs{" "}
                   <IoLogoElectron className="inline-block text-white" />

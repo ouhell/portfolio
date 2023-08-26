@@ -27,7 +27,7 @@ const Skill = (props: Props) => {
   const { animate, icon: Icon } = props;
   return (
     <m.div
-      className="h-12 w-12 flex justify-center items-center bg-white text-black rounded-full absolute"
+      className="h-12 w-12 flex justify-center items-center bg-white text-black rounded-full absolute cursor-pointer"
       variants={
         animate
           ? getPopIn(
