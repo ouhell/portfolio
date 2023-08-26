@@ -40,10 +40,73 @@ export const navData: Array<NavEntry> = [
 type Props = {};
 
 const Nav = (props: Props) => {
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
+
+  const changePage = (difference: number) => {
+    console.log("changing");
+    if (Math.abs(difference) > 150) {
+      const currentPathIndex = navData.findIndex(
+        (data) => data.path === pathname
+      );
+      if (currentPathIndex === -1) return;
+
+      if (difference > 0) {
+        push(navData[(currentPathIndex + 1) % navData.length].path);
+      } else {
+        push(
+          navData[(currentPathIndex - 1 + navData.length) % navData.length].path
+        );
+      }
+    }
+  };
+
+  React.useEffect(() => {
+    console.log("pathname:", pathname);
+    let startY = 0;
+    let currentY = 0;
+
+    const touchMove = (e: TouchEvent) => {
+      currentY = e.touches[0].clientY;
+      const difference = startY - currentY;
+      changePage(difference);
+    };
+
+    const touchStop = () => {
+      startY = 0;
+      document.removeEventListener("touchmove", touchMove);
+    };
+
+    const touchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+      document.addEventListener("touchmove", touchMove);
+    };
+
+    document.addEventListener("touchstart", touchStart);
+    document.addEventListener("touchend", touchStop);
+
+    const click = () => {
+      changePage(-160);
+    };
+
+    // document.addEventListener("click", click);
+
+    return () => {
+      document.removeEventListener("touchstart", touchStart);
+      document.removeEventListener("touchmove", touchMove);
+      document.removeEventListener("touchend", touchStop);
+      // document.removeEventListener("click", click);
+    };
+  }, [pathname]);
+
   return (
-    <nav className="fixed  h-10  lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 ">
-      <div className="flex lg:flex-col items-center justify-evenly lg:justify-center h-full lg:h-fit w-full   group flex-grow lg:rounded-full bg-white/10 py-2 nav">
+    <nav
+      className="fixed  h-10  lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
+      // onClick={(e) => {
+      //   e.stopPropagation();
+      //   changePage(160);
+      // }}
+    >
+      <div className="flex lg:flex-col items-center justify-evenly lg:justify-center h-full lg:h-fit w-full   group flex-grow lg:rounded-full bg-white/10 py-2 nav select-none">
         {navData.map((data) => {
           const isActive = data.path === pathname;
           return (

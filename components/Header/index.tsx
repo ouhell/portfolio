@@ -5,7 +5,7 @@ type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <header className="p-4 absolute z-[1]  w-full">
+    <header className="p-4 absolute z-[80]  w-full">
       <div className="container mx-auto flex flex-col lg:flex-row justify-normal gap-4 lg:justify-between items-center ">
         <Image
           src="/logo.svg"

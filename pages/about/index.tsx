@@ -1,6 +1,25 @@
+import Skills from "@/components/Skills";
 import React from "react";
-import { Particles } from "react-tsparticles";
+
 import { loadFull } from "tsparticles";
+import { motion as m } from "framer-motion";
+import { DiJavascript1 } from "react-icons/di";
+import { TbBrandTypescript } from "react-icons/tb";
+
+import {
+  SiNextdotjs,
+  SiMongodb,
+  SiExpress,
+  SiPostgresql,
+} from "react-icons/si";
+import { IoLogoElectron } from "react-icons/io5";
+import { fadeIn } from "@/variants";
+import {
+  BiLogoJavascript,
+  BiLogoReact,
+  BiLogoNodejs,
+  BiLogoTypescript,
+} from "react-icons/bi";
 type Props = {};
 
 const About = (props: Props) => {
@@ -10,75 +29,65 @@ const About = (props: Props) => {
 
   const particlesLoaded = React.useCallback(async () => {}, []);
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        fpsLimit: 120,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: false,
-              mode: "push",
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-            resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: "#e68e2e",
-          },
-          links: {
-            color: "#f5d393",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          move: {
-            direction: "none",
-            enable: true,
-            outModes: {
-              default: "bounce",
-            },
-            random: false,
-            speed: 1,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
-            value: 80,
-          },
-          opacity: {
-            value: 0.5,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 5 },
-          },
-        },
-        detectRetina: true,
-      }}
-    />
+    <main className="h-full">
+      <div className="container lg:pt-35 mx-auto h-full flex flex-col lg:flex-row justify-center lg:justify-normal items-center ">
+        <div className=" text-center lg:text-left  flex flex-col  justify-center lg:justify-normal items-center lg:items-start">
+          <m.h1
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            animate="show"
+            className="text-4xl"
+          >
+            I&apos;m <span className="text-accent"> Oussama Hamida </span>
+            <br />A Full Stack Dev
+          </m.h1>
+          <div className="mt-4 w-fit">
+            <m.ul
+              className="text-left"
+              variants={fadeIn("right", 0.5)}
+              initial="hidden"
+              animate="show"
+            >
+              <m.li className="" variants={fadeIn("right", 0.6)}>
+                <p>
+                  - Javascript - Typescript{" "}
+                  <DiJavascript1 className="inline-block text-white" />{" "}
+                  <TbBrandTypescript className="inline-block text-white" />
+                </p>
+              </m.li>
+              <m.li variants={fadeIn("right", 0.7)}>
+                <p>
+                  - Nodejs - Expressjs{" "}
+                  <BiLogoNodejs className="inline-block text-white" />{" "}
+                  <SiExpress className="inline-block text-white" />
+                </p>
+              </m.li>
+              <m.li variants={fadeIn("right", 0.8)}>
+                <p>
+                  - Reactjs - Nextjs{" "}
+                  <BiLogoReact className="inline-block text-white" />{" "}
+                  <SiNextdotjs className="inline-block text-white" />
+                </p>
+              </m.li>
+              <m.li variants={fadeIn("right", 0.9)}>
+                <p>
+                  - MongoDb - SQL{" "}
+                  <SiMongodb className="inline-block text-white" />{" "}
+                  <SiPostgresql className="inline-block text-white" />
+                </p>
+              </m.li>
+              <m.li variants={fadeIn("right", 1)}>
+                <p>
+                  - Electronjs{" "}
+                  <IoLogoElectron className="inline-block text-white" />
+                </p>
+              </m.li>
+            </m.ul>
+          </div>
+        </div>
+        <Skills />
+      </div>
+    </main>
   );
 };
 
