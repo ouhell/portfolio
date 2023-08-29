@@ -7,14 +7,11 @@ import { fadeIn } from "@/variants";
 
 export default function Home() {
   return (
-    <main
-      className={
-        "h-full w-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10"
-      }
-    >
+    <main className={"h-full w-full"}>
+      <div className="top-0 left-0 right-0 bottom-0 pointer-events-none bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute bg-no-repeat"></div>
       <Particles />
-      <div className=" lg:bg-explosion absolute h-full w-full lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge translate-z-0 "></div>
-      <div className="text-center flex flex-col justify-center  lg:pt-40 lg:text-left container h-full mx-auto">
+      <div className=" lg:bg-explosion absolute top-0 left-0 right-0 bottom-0  lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge translate-z-0 "></div>
+      <div className="text-center flex flex-col justify-center lg:text-start container h-full mx-auto">
         <m.h1
           variants={fadeIn("up", 0.3)}
           initial="hidden"

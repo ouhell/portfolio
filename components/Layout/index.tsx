@@ -27,7 +27,7 @@ const Layout = (props: Props) => {
       }
     >
       <TopLefImg />
-      <Header />
+
       <Nav />
       <AnimatePresence mode="wait" initial={false}>
         <m.div
@@ -35,9 +35,10 @@ const Layout = (props: Props) => {
           initial="hidden"
           animate="shown"
           exit="exit"
-          className="h-full   bg-site bg-no-repeat bg-cover pb-10 lg:pb-0 "
+          className="h-full   bg-site bg-no-repeat bg-cover pb-[8.5rem] lg:pb-0 lg:pr-16  flex flex-col"
           key={route}
         >
+          <Header />
           <AnimatePresence>{props.children}</AnimatePresence>
         </m.div>
       </AnimatePresence>

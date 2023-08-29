@@ -60,47 +60,47 @@ const Nav = (props: Props) => {
     }
   };
 
-  React.useEffect(() => {
-    console.log("pathname:", pathname);
-    let startY = 0;
-    let currentY = 0;
+  // React.useEffect(() => {
+  //   console.log("pathname:", pathname);
+  //   let startY = 0;
+  //   let currentY = 0;
 
-    const touchMove = (e: TouchEvent) => {
-      currentY = e.touches[0].clientY;
-      const difference = startY - currentY;
-      changePage(difference);
-    };
+  //   const touchMove = (e: TouchEvent) => {
+  //     currentY = e.touches[0].clientY;
+  //     const difference = startY - currentY;
+  //     changePage(difference);
+  //   };
 
-    const touchStop = () => {
-      startY = 0;
-      document.removeEventListener("touchmove", touchMove);
-    };
+  //   const touchStop = () => {
+  //     startY = 0;
+  //     document.removeEventListener("touchmove", touchMove);
+  //   };
 
-    const touchStart = (e: TouchEvent) => {
-      startY = e.touches[0].clientY;
-      document.addEventListener("touchmove", touchMove);
-    };
+  //   const touchStart = (e: TouchEvent) => {
+  //     startY = e.touches[0].clientY;
+  //     document.addEventListener("touchmove", touchMove);
+  //   };
 
-    document.addEventListener("touchstart", touchStart);
-    document.addEventListener("touchend", touchStop);
+  //   document.addEventListener("touchstart", touchStart);
+  //   document.addEventListener("touchend", touchStop);
 
-    const click = () => {
-      changePage(-160);
-    };
+  //   const click = () => {
+  //     changePage(-160);
+  //   };
 
-    // document.addEventListener("click", click);
+  //   // document.addEventListener("click", click);
 
-    return () => {
-      document.removeEventListener("touchstart", touchStart);
-      document.removeEventListener("touchmove", touchMove);
-      document.removeEventListener("touchend", touchStop);
-      // document.removeEventListener("click", click);
-    };
-  }, [pathname]);
+  //   return () => {
+  //     document.removeEventListener("touchstart", touchStart);
+  //     document.removeEventListener("touchmove", touchMove);
+  //     document.removeEventListener("touchend", touchStop);
+  //     // document.removeEventListener("click", click);
+  //   };
+  // }, [pathname]);
 
   return (
     <nav
-      className="fixed  h-10  lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
+      className="fixed    lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
       // onClick={(e) => {
       //   e.stopPropagation();
       //   changePage(160);

@@ -26,7 +26,7 @@ const Skills = (props: Props) => {
           duration: 0.6,
         },
       }}
-      className="hidden lg:block flex-1 pr-12 "
+      className="hidden lg:block flex-1 mx-auto"
     >
       <m.div
         initial={{

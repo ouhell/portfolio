@@ -30,7 +30,7 @@ const About = (props: Props) => {
   const particlesLoaded = React.useCallback(async () => {}, []);
   return (
     <main className="h-full">
-      <div className="container lg:pt-35 mx-auto h-full flex flex-col lg:flex-row justify-center lg:justify-normal items-center ">
+      <div className="container mx-auto h-full flex flex-col lg:flex-row justify-center lg:justify-normal items-center ">
         <div className=" text-center lg:text-left  flex flex-col  justify-center lg:justify-normal items-center lg:items-start">
           <m.h1
             variants={fadeIn("up", 0.4)}
