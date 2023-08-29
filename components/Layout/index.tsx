@@ -28,18 +28,23 @@ const Layout = (props: Props) => {
     >
       <TopLefImg />
 
-      <Nav />
       <AnimatePresence mode="wait" initial={false}>
         <m.div
           variants={animations}
           initial="hidden"
           animate="shown"
           exit="exit"
-          className="h-full   bg-site bg-no-repeat bg-cover pb-[8.5rem] lg:pb-0 lg:pr-16  flex flex-col"
+          className="h-full   bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16  flex flex-col "
           key={route}
         >
           <Header />
-          <AnimatePresence>{props.children}</AnimatePresence>
+          <AnimatePresence>
+            <main className="h-full max-h-full overflow-auto">
+              {props.children}
+            </main>
+          </AnimatePresence>
+
+          <Nav />
         </m.div>
       </AnimatePresence>
     </div>

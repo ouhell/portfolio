@@ -1,19 +1,32 @@
 import Projects from "@/components/Projects";
 import React from "react";
-
+import { motion as m } from "framer-motion";
+import { fadeIn } from "@/variants";
 type Props = {};
 
 const Work = (props: Props) => {
   return (
-    <main className="h-full">
-      <div className="h-full container flex flex-col lg:flex-row mx-auto justify-center lg:justify-normal items-center gap-8 lg:gap-32 w-full mt-24 md:mt-36 lg:mt-0 ">
-        <div className="flex flex-col gap-4 lg:pt-0">
-          <h1 className="text-3xl">My Projects</h1>
-          <p className="max-w-xs">Discover What I&apos;ve Built</p>
-        </div>
-        <Projects />
+    <div className="h-full  container flex flex-col lg:flex-row mx-auto justify-center lg:justify-normal items-center gap-8 lg:gap-32 w-full  ">
+      <div className="flex flex-col gap-4 lg:pt-0">
+        <m.h1
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          animate="show"
+          className="text-3xl"
+        >
+          My Projects
+        </m.h1>
+        <m.p
+          variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          animate="show"
+          className="max-w-xs"
+        >
+          Discover What I&apos;ve Built
+        </m.p>
       </div>
-    </main>
+      <Projects />
+    </div>
   );
 };
 

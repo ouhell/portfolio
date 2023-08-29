@@ -100,7 +100,7 @@ const Nav = (props: Props) => {
 
   return (
     <nav
-      className="fixed    lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
+      className=" lg:fixed   h-12  lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
       // onClick={(e) => {
       //   e.stopPropagation();
       //   changePage(160);
