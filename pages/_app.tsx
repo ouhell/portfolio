@@ -6,6 +6,7 @@ import { AnimatePresence, Variants } from "framer-motion";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { motion as m } from "framer-motion";
+import Head from "next/head";
 export default function App({ Component, pageProps }: AppProps) {
   const { route } = useRouter();
   return (
@@ -17,6 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </m.div>
       </AnimatePresence> */}
+      <Head>
+        <title>CodeBaker</title>
+      </Head>
       <Component {...pageProps} />
     </Layout>
   );

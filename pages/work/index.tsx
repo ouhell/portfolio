@@ -7,7 +7,7 @@ type Props = {};
 const Work = (props: Props) => {
   return (
     <div className="h-full  container flex flex-col lg:flex-row mx-auto justify-center lg:justify-normal items-center gap-8 lg:gap-32 w-full  ">
-      <div className="flex flex-col gap-4 lg:pt-0">
+      <div className="flex flex-col gap-4 lg:mt-[-8rem]">
         <m.h1
           variants={fadeIn("up", 0.4)}
           initial="hidden"

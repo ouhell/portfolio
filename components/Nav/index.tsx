@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { ReactNode } from "react";
+import React, { ReactNode, ElementRef } from "react";
 import { IconType } from "react-icons";
+
 // icons
 import {
   HiHome,
@@ -25,11 +26,11 @@ export const navData: Array<NavEntry> = [
   { name: "about", path: "/about", icon: HiUser },
   { name: "services", path: "/services", icon: HiRectangleGroup },
   { name: "work", path: "/work", icon: HiViewColumns },
-  {
-    name: "testimonials",
-    path: "/testimonials",
-    icon: HiChatBubbleBottomCenterText,
-  },
+  // {
+  //   name: "testimonials",
+  //   path: "/testimonials",
+  //   icon: HiChatBubbleBottomCenterText,
+  // },
   {
     name: "contact",
     path: "/contact",

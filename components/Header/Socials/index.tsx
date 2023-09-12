@@ -1,6 +1,11 @@
 import React from "react";
-import { BiLogoFacebook, BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
-
+import {
+  BiLogoFacebook,
+  BiLogoGithub,
+  BiLogoLinkedin,
+  BiMailSend,
+} from "react-icons/bi";
+import { HiMail } from "react-icons/hi";
 type Props = {};
 
 const socials = [
@@ -19,6 +24,11 @@ const socials = [
     link: "https://www.linkedin.com/in/oussama-islem-hamida-72a418284/",
     icon: BiLogoLinkedin,
   },
+  {
+    name: "outlook",
+    link: "hamida.oussama@outlook.com",
+    icon: HiMail,
+  },
 ];
 
 const Socials = (props: Props) => {
@@ -28,7 +38,7 @@ const Socials = (props: Props) => {
         <a
           key={soc.name}
           href={soc.link}
-          target="_blank"
+          // target="_blank"
           className="hover:text-accent"
         >
           <soc.icon />
