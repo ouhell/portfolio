@@ -10,7 +10,10 @@ import Head from "next/head";
 export default function App({ Component, pageProps }: AppProps) {
   const { route } = useRouter();
   return (
-    <Layout>
+    <>
+      <Head>
+        <title>CodeBaker</title>
+      </Head>
       {/* <AnimatePresence mode="wait" initial={false}>
         <m.div className="h-full" key={route}>
           <Transition />
@@ -18,10 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </m.div>
       </AnimatePresence> */}
-      <Head>
-        <title>CodeBaker</title>
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }

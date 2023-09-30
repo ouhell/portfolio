@@ -12,7 +12,8 @@ export default function Home() {
       <Head>
         <link rel="preload" as="image" href="/bg-explosion.png" />
       </Head>
-      <div className="top-0 left-0 right-0 bottom-0 pointer-events-none bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute bg-no-repeat"></div>
+      <div className="top-0 left-0 right-0 bottom-0 pointer-events-none bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute bg-no-repeat "></div>
+      <div className="top-0 left-0 right-0 bottom-0 pointer-events-none  absolute bg-no-repeat bg-site -z-40"></div>
       <Particles />
       <div className=" lg:bg-explosion absolute top-0 left-0 right-0 bottom-0  lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge translate-z-0 "></div>
       <div className="text-center flex flex-col justify-center lg:text-start container h-full mx-auto">

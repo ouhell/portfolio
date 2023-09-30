@@ -28,25 +28,26 @@ const Layout = (props: Props) => {
     >
       <TopLefImg />
 
-      <AnimatePresence mode="wait" initial={false}>
-        <m.div
-          variants={animations}
-          initial="hidden"
-          animate="shown"
-          exit="exit"
-          className="h-full   bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16  flex flex-col "
-          key={route}
-        >
-          <Header />
-          <AnimatePresence>
-            <main className="h-full max-h-full overflow-auto">
-              {props.children}
-            </main>
-          </AnimatePresence>
-        </m.div>
-      </AnimatePresence>
-
-      <Nav />
+      <m.div className="h-full   bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16   flex flex-col ">
+        <Header />
+        <AnimatePresence mode="wait" initial={false}>
+          <m.div
+            variants={animations}
+            initial="hidden"
+            animate="shown"
+            exit="exit"
+            className="h-full"
+            key={route}
+          >
+            <AnimatePresence>
+              <main className="h-full  max-h-full overflow-auto">
+                {props.children}
+              </main>
+            </AnimatePresence>
+          </m.div>
+        </AnimatePresence>
+        <Nav />
+      </m.div>
     </div>
   );
 };
