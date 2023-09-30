@@ -15,12 +15,21 @@ const Message = ({ message, id, type }: MessageProps) => {
   React.useEffect(() => {
     if (message) {
       clearTimeout(resetter.current);
-
-      resetter.current = setTimeout(() => {
+      if (show) {
         setShow(false);
-      }, 3000);
+        setTimeout(() => {
+          resetter.current = setTimeout(() => {
+            setShow(false);
+          }, 3000);
+          setShow(true);
+        }, 500);
+      } else {
+        resetter.current = setTimeout(() => {
+          setShow(false);
+        }, 3000);
 
-      setShow(true);
+        setShow(true);
+      }
     }
   }, [id]);
 

@@ -43,10 +43,10 @@ const Layout = (props: Props) => {
               {props.children}
             </main>
           </AnimatePresence>
-
-          <Nav />
         </m.div>
       </AnimatePresence>
+
+      <Nav />
     </div>
   );
 };

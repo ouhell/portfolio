@@ -4,10 +4,14 @@ import classNames from "classnames";
 import Particles from "@/components/Particles";
 import { motion as m } from "framer-motion";
 import { fadeIn } from "@/variants";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <link rel="preload" as="image" href="/bg-explosion.png" />
+      </Head>
       <div className="top-0 left-0 right-0 bottom-0 pointer-events-none bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute bg-no-repeat"></div>
       <Particles />
       <div className=" lg:bg-explosion absolute top-0 left-0 right-0 bottom-0  lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge translate-z-0 "></div>
