@@ -13,6 +13,24 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>CodeBaker</title>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
+        />
       </Head>
       {/* <AnimatePresence mode="wait" initial={false}>
         <m.div className="h-full" key={route}>
