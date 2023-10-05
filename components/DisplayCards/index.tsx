@@ -34,7 +34,7 @@ type Props = {};
 
 const DisplayCards = (props: Props) => {
   return (
-    <div className="lg:flex-1 p-4 overflow-y-auto">
+    <div className="lg:flex-1 p-4 overflow-y-auto ">
       <div className=" grid grid-rows-3 sm:grid-rows-1 sm:grid-cols-3 gap-4">
         {cards.map((card, i) => {
           return (

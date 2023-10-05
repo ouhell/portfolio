@@ -7,7 +7,7 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <div className="h-full container flex flex-col lg:flex-row justify-center lg:justify-normal items-center mx-auto lg:mt-[-2rem]">
+    <div className="flex-1 container flex flex-col lg:flex-row justify-center lg:justify-normal items-center mx-auto lg:mt-[-2rem] overflow-auto">
       <div className="flex flex-col gap-4 text-center lg:text-left">
         <m.h1
           variants={fadeIn("up", 0.3)}

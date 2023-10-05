@@ -28,7 +28,7 @@ const Layout = (props: Props) => {
     >
       <TopLefImg />
 
-      <m.div className="h-full   bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16   flex flex-col ">
+      <m.div className="h-full max-h-full  bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16   flex flex-col ">
         <Header />
         <AnimatePresence mode="wait" initial={false}>
           <m.div
@@ -36,11 +36,11 @@ const Layout = (props: Props) => {
             initial="hidden"
             animate="shown"
             exit="exit"
-            className="h-full"
+            className="flex-1 flex flex-col max-h-full overflow-auto"
             key={route}
           >
             <AnimatePresence>
-              <main className="h-full  max-h-full overflow-auto">
+              <main className="flex-1 overflow-auto flex flex-col">
                 {props.children}
               </main>
             </AnimatePresence>

@@ -9,7 +9,7 @@ const Work = (props: Props) => {
     <div className="h-full  container flex flex-col lg:flex-row mx-auto justify-center lg:justify-normal items-center gap-8 lg:gap-32 w-full  ">
       <div className="flex flex-col gap-4 lg:mt-[-8rem]">
         <m.h1
-          variants={fadeIn("up", 0.4)}
+          variants={fadeIn("left", 0.4)}
           initial="hidden"
           animate="show"
           className="text-3xl"
@@ -17,7 +17,7 @@ const Work = (props: Props) => {
           My Projects
         </m.h1>
         <m.p
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("right", 0.5)}
           initial="hidden"
           animate="show"
           className="max-w-xs"
