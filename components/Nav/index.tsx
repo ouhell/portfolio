@@ -101,7 +101,7 @@ const Nav = (props: Props) => {
 
   return (
     <nav
-      className=" lg:fixed  max-h-12 min-h-12  h-12  lg:h-full flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
+      className=" lg:fixed  max-h-12 min-h-12  h-12  lg:h-full lg:max-h-none flex justify-center items-center  w-full lg:w-fit bottom-0 lg:right-8 z-10 "
       // onClick={(e) => {
       //   e.stopPropagation();
       //   changePage(160);
