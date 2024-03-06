@@ -11,6 +11,7 @@ export default function handler(
 ) {
   if (req.method === "GET") return GET(req, res);
   if (req.method === "POST") return POST(req, res);
+  if (req.method === "PUT") return PUT(req, res);
 
   return res.status(200).json({ name: "John Doe" });
 }
@@ -25,5 +26,11 @@ function POST(req: NextApiRequest, res: NextApiResponse<Data>) {
   console.log("posting");
   return res.status(200).json({
     name: "posted mf",
+  });
+}
+
+function PUT(req: NextApiRequest, res: NextApiResponse) {
+  return res.status(200).json({
+    name: "put something",
   });
 }

@@ -1,8 +1,9 @@
 import Input from "@/components/Input";
 import React from "react";
-import emailjs from "@emailjs/browser";
+
 import { BiLoader } from "react-icons/bi";
 import Message, { MessageProps } from "@/components/Message";
+import axios from "axios";
 type Props = {};
 
 type FormData = {
@@ -97,22 +98,22 @@ const Contact = (props: Props) => {
     if (!validationResult) return;
     if (form.current) {
       setIsLoading(true);
-      emailjs
-        .sendForm(
-          "service_o4ufqcv",
-          "template_vaf8oa3",
-          form.current,
-          "FndIhQVMbXlqvK2cT"
-        )
+      axios
+        .post("/api/email", {
+          sender: formData.name.value,
+          senderEmail: formData.email.value,
+          subject: formData.subject.value,
+          content: formData.message.value,
+        })
         .then(
           (result) => {
-            console.log(result.text);
+            console.log("result ::: ", result);
             setNotifMessage({
               id: Math.random() + "",
               message: "Message sent",
               type: "success",
             });
-            setFormData(initialFormData);
+            setFormData({ ...initialFormData });
           },
           (error) => {
             setNotifMessage({
@@ -120,7 +121,7 @@ const Contact = (props: Props) => {
               message: "Unexpected Error",
               type: "error",
             });
-            console.log(error.text);
+            console.log("error :: ", error);
           }
         )
         .finally(() => {
