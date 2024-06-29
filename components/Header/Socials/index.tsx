@@ -9,11 +9,11 @@ import { HiMail } from "react-icons/hi";
 type Props = {};
 
 const socials = [
-  {
-    name: "facebook",
-    link: "https://www.facebook.com/profile.php?id=100006199726661",
-    icon: BiLogoFacebook,
-  },
+  // {
+  //   name: "facebook",
+  //   link: "https://www.facebook.com/profile.php?id=100006199726661",
+  //   icon: BiLogoFacebook,
+  // },
   {
     name: "github",
     link: "https://github.com/ouhell",
