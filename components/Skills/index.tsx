@@ -3,8 +3,9 @@ import { motion as m } from "framer-motion";
 import {
   BiLogoReact,
   BiLogoTypescript,
-  BiLogoMongodb,
   BiLogoPostgresql,
+  BiLogoSpringBoot,
+  BiLogoJava,
 } from "react-icons/bi";
 import { DiJavascript1 } from "react-icons/di";
 import { SiNextdotjs, SiMongodb, SiExpress } from "react-icons/si";
@@ -132,6 +133,26 @@ const Skills = (props: Props) => {
             delay: baseDelay + 2,
             bottom: "12%",
             left: "3%",
+          }}
+        />
+
+        <Skill
+          animate={true}
+          icon={BiLogoSpringBoot}
+          animateProps={{
+            delay: baseDelay + 2.4,
+            bottom: "45%",
+            left: "-5%",
+          }}
+        />
+
+        <Skill
+          animate={true}
+          icon={BiLogoJava}
+          animateProps={{
+            delay: baseDelay + 2.8,
+            top: "-7%",
+            // right: "-5%",
           }}
         />
       </m.div>

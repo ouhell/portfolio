@@ -19,6 +19,8 @@ import {
   BiLogoReact,
   BiLogoNodejs,
   BiLogoTypescript,
+  BiLogoJava,
+  BiLogoSpringBoot,
 } from "react-icons/bi";
 import Head from "next/head";
 type Props = {};
@@ -57,6 +59,13 @@ const About = (props: Props) => {
                   - Javascript - Typescript{" "}
                   <DiJavascript1 className="inline-block text-white" />{" "}
                   <TbBrandTypescript className="inline-block text-white" />
+                </p>
+              </m.li>
+              <m.li className="" variants={fadeIn("left", 0.65)}>
+                <p>
+                  <span>- Java - SpringBoot</span>{" "}
+                  <BiLogoJava className="inline-block text-white " />{" "}
+                  <BiLogoSpringBoot className="inline-block text-white" />
                 </p>
               </m.li>
               <m.li variants={fadeIn("left", 0.7)}>

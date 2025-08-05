@@ -4,6 +4,7 @@ import React from "react";
 import { BiLoader } from "react-icons/bi";
 import Message, { MessageProps } from "@/components/Message";
 import axios from "axios";
+import Head from "next/head";
 type Props = {};
 
 type FormData = {
@@ -143,6 +144,9 @@ const Contact = (props: Props) => {
 
   return (
     <>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <Message
         message={notifMessage.message}
         id={notifMessage.id}
