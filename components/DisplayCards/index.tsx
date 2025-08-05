@@ -13,14 +13,14 @@ import { fadeIn } from "@/variants";
 
 const cards = [
   {
-    title: "Websites",
+    title: "FullStack Applications",
     Icon: CgWebsite,
-    text: "Crafting dynamic websites with React and Next.js. Elevate your online presence with seamless user experiences and modern design.",
+    text: "Crafting dynamic websites with React and Next.js , back end solutions with Spring boot.",
   },
   {
-    title: "Backend Servers",
+    title: "Web Scraping",
     Icon: CgServer,
-    text: "Powering your digital ambitions with Node.js backend solutions. ",
+    text: "Extracting Data from the web using Puppeteer.js / Playwright",
   },
 
   {
