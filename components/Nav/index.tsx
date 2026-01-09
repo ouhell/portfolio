@@ -31,11 +31,11 @@ export const navData: Array<NavEntry> = [
   //   path: "/testimonials",
   //   icon: HiChatBubbleBottomCenterText,
   // },
-  {
-    name: "contact",
-    path: "/contact",
-    icon: HiEnvelope,
-  },
+  // {
+  //   name: "contact",
+  //   path: "/contact",
+  //   icon: HiEnvelope,
+  // },
 ];
 
 type Props = {};
