@@ -1,7 +1,12 @@
+"use client";
+
 import axios from "axios";
 import React from "react";
 import { CgSpinner } from "react-icons/cg";
-
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/style.css";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark", position: "top-center" });
 const iniForm = {
   sender: "",
   email: "",
@@ -30,8 +35,11 @@ const ContactPage = () => {
       .then(() => {
         console.log("email sent !!!");
         setForm({ ...iniForm });
+
+        toast("Email Sent Successfuly");
       })
       .catch((err) => {
+        toast("Something went Wrong!");
         console.log(err);
       })
       .finally(() => {
