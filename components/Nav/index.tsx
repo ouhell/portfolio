@@ -31,11 +31,11 @@ export const navData: Array<NavEntry> = [
   //   path: "/testimonials",
   //   icon: HiChatBubbleBottomCenterText,
   // },
-  // {
-  //   name: "contact",
-  //   path: "/contact",
-  //   icon: HiEnvelope,
-  // },
+  {
+    name: "contact",
+    path: "/contact",
+    icon: HiEnvelope,
+  },
 ];
 
 type Props = {};
@@ -47,7 +47,7 @@ const Nav = (props: Props) => {
     console.log("changing");
     if (Math.abs(difference) > 150) {
       const currentPathIndex = navData.findIndex(
-        (data) => data.path === pathname
+        (data) => data.path === pathname,
       );
       if (currentPathIndex === -1) return;
 
@@ -55,7 +55,8 @@ const Nav = (props: Props) => {
         push(navData[(currentPathIndex + 1) % navData.length].path);
       } else {
         push(
-          navData[(currentPathIndex - 1 + navData.length) % navData.length].path
+          navData[(currentPathIndex - 1 + navData.length) % navData.length]
+            .path,
         );
       }
     }
@@ -117,7 +118,7 @@ const Nav = (props: Props) => {
                   "hover:text-accent lg:px-3 lg:py-4 navItem ",
                   {
                     "text-accent ": isActive,
-                  }
+                  },
                 )}
               >
                 {<data.icon className="w-6 h-6 lg:w-5 lg:h-5" />}

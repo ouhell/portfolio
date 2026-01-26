@@ -5,32 +5,18 @@ type Data = {
   name: string;
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") return GET(req, res);
-  if (req.method === "POST") return POST(req, res);
-  if (req.method === "PUT") return PUT(req, res);
 
   return res.status(200).json({ name: "John Doe" });
 }
 
-function GET(req: NextApiRequest, res: NextApiResponse<Data>) {
+function GET(req: NextApiRequest, res: NextApiResponse<unknown>) {
   return res.status(200).json({
     name: "hello",
-  });
-}
-
-function POST(req: NextApiRequest, res: NextApiResponse<Data>) {
-  console.log("posting");
-  return res.status(200).json({
-    name: "posted mf",
-  });
-}
-
-function PUT(req: NextApiRequest, res: NextApiResponse) {
-  return res.status(200).json({
-    name: "put something",
+    data: {
+      username: process.env.EMAIL_USER,
+      password: process.env.EMAIL_PASSWORD,
+    },
   });
 }
