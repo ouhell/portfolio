@@ -25,12 +25,18 @@ function MainImage() {
         },
       }}
       className={clsx(
-        "  fixed top-0 left-0 right-0 bottom-0  lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge  ",
+        "   absolute top-0 left-0 right-0 bottom-0  lg:bg-cover lg:bg-no-repeat lg:bg-right mix-blend-color-dodge  ",
         {
           "bg-explosion": hidden,
           "bg-explosion_big": !hidden,
         },
       )}
+      style={{
+        maskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+      }}
     ></m.div>
   );
 }

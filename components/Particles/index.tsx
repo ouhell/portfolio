@@ -14,7 +14,7 @@ const Particles = (props: Props) => {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
-      className="absolute h-full w-full"
+      className="fixed top-0 left-0 right-0 bottom-0"
       options={{
         fpsLimit: 120,
         interactivity: {

@@ -39,8 +39,8 @@ const projects: Proj[] = [
 
 const Projects = (props: Props) => {
   return (
-    <div className=" mb-16   lg:mb-0 mx-auto lg:mr-16 xl:mr-auto ">
-      <div className="grid sm:grid-cols-2 sm:grid-rows-2   gap-4 h-f  m-4">
+    <div className="w-full xl:max-w-[65%]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10">
         {projects.map((proj, i) => {
           return <Project key={proj.name} i={i} proj={proj} />;
         })}

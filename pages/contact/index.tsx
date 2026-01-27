@@ -6,6 +6,10 @@ import { CgSpinner } from "react-icons/cg";
 import toast, { toastConfig } from "react-simple-toasts";
 import "react-simple-toasts/dist/style.css";
 import "react-simple-toasts/dist/theme/dark.css";
+import { BsArrowRight } from "react-icons/bs";
+import { motion as m } from "framer-motion";
+import { fadeIn } from "@/variants";
+
 toastConfig({ theme: "dark", position: "top-center" });
 const iniForm = {
   sender: "",
@@ -48,61 +52,74 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="w-full h-full outline-red-300 flex justify-center p-4">
-      <div className="container flex flex-col gap-12 p-8 items-center">
-        <h3 className="font-semibold text-3xl">Contact Me</h3>
-
-        <div className="flex flex-col sm:flex-row justify-between gap-12 w-[50rem] max-w-full">
-          <input
-            type="text"
-            className="bg-transparent outline outline-white/60 px-2 py-1 rounded-sm w-full"
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) => {
-              setForm({ ...form, email: e.target.value });
-            }}
-          />
-          <input
-            type="text"
-            className="bg-transparent outline outline-white/60 px-2 py-1 rounded-sm w-full "
-            placeholder="Name"
-            value={form.sender}
-            onChange={(e) => {
-              setForm({ ...form, sender: e.target.value });
-            }}
-          />
-        </div>
-        <div className="flex justify-between gap-12 w-[50rem] max-w-full">
-          <input
-            type="text"
-            className="bg-transparent outline outline-white/60 px-2 py-1 rounded-sm w-full"
-            placeholder="Subject"
-            value={form.title}
-            onChange={(e) => {
-              setForm({ ...form, title: e.target.value });
-            }}
-          />
-        </div>
-        <div className="flex justify-between gap-12 w-[50rem] max-w-full h-[30rem] max-h-full">
-          <textarea
-            className="bg-transparent outline outline-white/60 px-2 py-1 rounded-sm w-full"
-            placeholder="content"
-            value={form.content}
-            onChange={(e) => {
-              setForm({ ...form, content: e.target.value });
-            }}
-          />
-        </div>
-
-        <div>
-          <button
-            disabled={!formIsValid || loadingBtn}
-            className="px-8 py-1 rounded-md bg-accent text-white flex items-center gap-4 disabled:opacity-50"
-            onClick={sendMail}
+    <div className="h-full bg-primary/30 relative z-10">
+      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <div className="flex flex-col w-full max-w-[700px]">
+          {/* text */}
+          <m.h2
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="h2 text-center mb-12"
           >
-            <span>Send Email</span>
-            {loadingBtn && <CgSpinner className="animate-spin" />}
-          </button>
+            Let&apos;s <span className="text-accent">connect.</span>
+          </m.h2>
+          {/* form */}
+          <m.form
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex-1 flex flex-col gap-6 w-full mx-auto"
+            onSubmit={(e) => {
+              e.preventDefault();
+              sendMail();
+            }}
+          >
+            {/* input group */}
+            <div className="flex gap-x-6 w-full">
+              <input
+                type="text"
+                placeholder="name"
+                className="input"
+                value={form.sender}
+                onChange={(e) => setForm({ ...form, sender: e.target.value })}
+              />
+              <input
+                type="email"
+                placeholder="email"
+                className="input"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="subject"
+              className="input"
+              value={form.title}
+              onChange={(e) => setForm({ ...form, title: e.target.value })}
+            />
+            <textarea
+              placeholder="message"
+              className="textarea"
+              value={form.content}
+              onChange={(e) => setForm({ ...form, content: e.target.value })}
+            ></textarea>
+            <button
+              disabled={!formIsValid || loadingBtn}
+              className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group disabled:opacity-50 disabled:cursor-not-allowed ml-auto"
+              // onClick is handled by onSubmit, but keeping it for safety if type is not submit
+              type="submit"
+            >
+              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                Let&apos;s talk
+              </span>
+              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+              {loadingBtn && <CgSpinner className="animate-spin ml-2" />}
+            </button>
+          </m.form>
         </div>
       </div>
     </div>

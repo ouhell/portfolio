@@ -26,22 +26,20 @@ import Head from "next/head";
 type Props = {};
 
 const About = (props: Props) => {
-  const particlesInit = React.useCallback(async (engine: any) => {
-    await loadFull(engine);
-  }, []);
 
-  const particlesLoaded = React.useCallback(async () => {}, []);
+
   return (
     <>
       <Head>
         <title>About</title>
       </Head>
-      <div className="container mx-auto h-full flex flex-col lg:flex-row justify-center lg:justify-normal items-center ">
+      <div className="container mx-auto h-full flex flex-col lg:flex-row justify-center lg:justify-normal items-center relative z-10 ">
         <div className=" text-center lg:text-left  flex flex-col  justify-center lg:justify-normal items-center lg:items-start">
           <m.h1
             variants={fadeIn("up", 0.4)}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
             className="text-4xl"
           >
             I&apos;m <span className="text-accent"> Oussama Hamida </span>
@@ -52,7 +50,8 @@ const About = (props: Props) => {
               className="text-left"
               variants={fadeIn("left", 0.5)}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
             >
               <m.li className="" variants={fadeIn("left", 0.6)}>
                 <p>

@@ -35,7 +35,7 @@ type Props = {};
 const DisplayCards = (props: Props) => {
   return (
     <div className="lg:flex-1 p-4 overflow-y-auto ">
-      <div className=" grid grid-rows-3 sm:grid-rows-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full">
         {cards.map((card, i) => {
           return (
             <m.div
@@ -45,7 +45,8 @@ const DisplayCards = (props: Props) => {
               }}
               variants={fadeIn("down", 0.8 + 0.2 * i)}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
             >
               <ServiceCard title={card.title} icon={card.Icon}>
                 {card.text}

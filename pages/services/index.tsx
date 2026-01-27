@@ -1,22 +1,29 @@
 import DisplayCards from "@/components/DisplayCards";
-import React from "react";
+import React, { createContext } from "react";
 import { motion as m } from "framer-motion";
 import { fadeIn } from "@/variants";
 import Head from "next/head";
 
 type Props = {};
 
+type Data = {
+  name: string;
+  age: number;
+};
+
 const Services = (props: Props) => {
   return (
-    <div className="flex-1 container flex flex-col lg:flex-row justify-center lg:justify-normal items-center mx-auto lg:mt-[-2rem] overflow-auto">
+    <div className="flex-1 container flex flex-col lg:flex-row justify-center lg:justify-normal items-center mx-auto lg:mt-[-2rem] overflow-auto relative z-10">
       <Head>
         <title>Services</title>
       </Head>
+
       <div className="flex flex-col gap-4 text-center lg:text-left">
         <m.h1
           variants={fadeIn("up", 0.3)}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           className="text-3xl "
         >
           My Services
@@ -24,7 +31,8 @@ const Services = (props: Props) => {
         <m.p
           variants={fadeIn("up", 0.5)}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           className="hidden sm:block max-w-xs lg:max-w-xs"
         >
           Crafting responsive websites, powerful backends, and dynamic desktop

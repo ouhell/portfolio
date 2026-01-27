@@ -9,13 +9,17 @@ type Props = {
 
 const ServiceCard = ({ children, icon: Icon, title }: Props) => {
   return (
-    <div className="w-full h-full flex sm:flex-col bg-purple-700/10 rounded-md p-4 cursor-pointer">
-      <div className="flex flex-col lg:flex-row justify-start lg:justify-center items-center">
-        <Icon className=" w-5 h-5 text-accent mb-4" />
+    <div className="group w-full h-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/50 rounded-xl p-6 lg:p-8 cursor-pointer transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-accent/20 flex flex-col items-center text-center gap-4 lg:gap-6">
+      <div className="p-4 rounded-full bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+        <Icon className="w-8 h-8" />
       </div>
-      <div className="flex flex-col gap-4  ">
-        <h1 className="text-lg text-center">{title}</h1>
-        <p className="text-sm">{children}</p>
+      <div className="flex flex-col gap-3">
+        <h3 className="text-xl font-bold group-hover:text-accent transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-sm font-light leading-relaxed text-white/60 group-hover:text-white/80 transition-colors duration-300">
+          {children}
+        </p>
       </div>
     </div>
   );

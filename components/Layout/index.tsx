@@ -23,14 +23,14 @@ const Layout = (props: Props) => {
     <div
       className={
         (classNames(sora.className),
-        "page bg-site bg-cover bg-no-repeat bg-cover text-white relative")
+        "min-h-screen outline-red-400 outline bg-site bg-repeat-y bg-cover text-white relative")
       }
     >
       <TopLefImg />
 
-      <m.div className="h-full max-h-full  bg-site bg-no-repeat bg-cover  lg:pb-0 lg:pr-16   flex flex-col ">
+      <m.div className="">
         <Header />
-        <AnimatePresence mode="wait" initial={false}>
+        {/* <AnimatePresence mode="wait" initial={false}>
           <m.div
             variants={animations}
             initial="hidden"
@@ -39,13 +39,11 @@ const Layout = (props: Props) => {
             className="flex-1 flex flex-col max-h-full overflow-auto"
             key={route}
           >
-            <AnimatePresence>
-              <main className="flex-1 overflow-auto flex flex-col">
-                {props.children}
-              </main>
-            </AnimatePresence>
+            <AnimatePresence> */}
+        <main className="flex-1  flex flex-col gap-20">{props.children}</main>
+        {/* </AnimatePresence>
           </m.div>
-        </AnimatePresence>
+        </AnimatePresence> */}
         <Nav />
       </m.div>
     </div>
