@@ -30,20 +30,9 @@ const Layout = (props: Props) => {
 
       <m.div className="">
         <Header />
-        {/* <AnimatePresence mode="wait" initial={false}>
-          <m.div
-            variants={animations}
-            initial="hidden"
-            animate="shown"
-            exit="exit"
-            className="flex-1 flex flex-col max-h-full overflow-auto"
-            key={route}
-          >
-            <AnimatePresence> */}
+       
         <main className="flex-1  flex flex-col gap-20">{props.children}</main>
-        {/* </AnimatePresence>
-          </m.div>
-        </AnimatePresence> */}
+     
         <Nav />
       </m.div>
     </div>
@@ -52,25 +41,4 @@ const Layout = (props: Props) => {
 
 export default Layout;
 
-const animations: Variants = {
-  hidden: {
-    // y: "10%",
-    opacity: 0,
-  },
-  shown: {
-    // y: "0%",
-    opacity: 1,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-  exit: {
-    // y: "-10%",
-    opacity: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-};
+
