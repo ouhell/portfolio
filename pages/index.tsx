@@ -1,8 +1,8 @@
 import Home from "@/components/Home";
-import About from "./about";
-import Services from "./services";
-import Work from "./work";
-import Contact from "./contact";
+import About from "../components/pages/about";
+import Services from "../components/pages/services";
+import Work from "../components/pages/work";
+import Contact from "../components/pages/contact";
 
 export default function LandingPage() {
   return (
